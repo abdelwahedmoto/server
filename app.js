@@ -3,7 +3,7 @@ const mysql = require("mysql");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const app = express();
-const port = 3000 || 6000;
+const port = 3000  || process.env.PORT;
 
 // MySQL connection
 const connection = mysql.createConnection({
@@ -519,6 +519,6 @@ app.get('/getSumVente',(req,res)=> {
 })
 //#endregion
 // Start the server
-app.listen(port, () => {
+app.listen(port , () => {
   console.log(`Server is running on port ${port}`);
 });
